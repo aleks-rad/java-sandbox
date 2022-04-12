@@ -1,0 +1,17 @@
+apply plugin: 'java'
+
+group 'java-sandbox'
+archivesBaseName = "java-sandbox"
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+}
