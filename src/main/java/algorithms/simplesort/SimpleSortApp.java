@@ -13,11 +13,17 @@ public class SimpleSortApp {
     public static void main(String[] args) {
         SimpleSortApp app = new SimpleSortApp();
 
-        int[] ints = app.generateInts(30);
+        int[] ints1 = app.generateInts(30);
+        println("BUBBLE SORT:");
+        println(Arrays.toString(ints1));
+        app.bubbleSort(ints1);
+        println(Arrays.toString(ints1));
 
-        println(Arrays.toString(ints));
-        app.bubbleSort(ints);
-        println(Arrays.toString(ints));
+        int[] ints2 = app.generateInts(30);
+        println("INSERTION SORT:");
+        println(Arrays.toString(ints2));
+        app.insertionSort(ints2);
+        println(Arrays.toString(ints2));
     }
 
     /**
@@ -40,6 +46,23 @@ public class SimpleSortApp {
         }
         println("iterationsCount = " + iterationsCount);
         println("swapCount = " + swapCount);
+    }
+
+    /**
+     * Сортировка методом вставки
+     */
+    public void insertionSort(int[] arr) {
+        int in;
+
+        for(int out = 1; out < arr.length; out++){
+            int temp = arr[out];
+            in = out;
+            while (in > 0 && arr[in - 1] >= temp){
+                arr[in] = arr[in - 1];
+                --in;
+            }
+            arr[in] = temp;
+        }
     }
 
     private void swap(int[] arr, int a, int b){
