@@ -24,6 +24,12 @@ public class SimpleSortApp {
         println(Arrays.toString(ints2));
         app.insertionSort(ints2);
         println(Arrays.toString(ints2));
+
+        int[] ints3 = app.generateInts(30);
+        println("SELECTION SORT:");
+        println(Arrays.toString(ints3));
+        app.selectionSort(ints3);
+        println(Arrays.toString(ints3));
     }
 
     /**
@@ -52,16 +58,29 @@ public class SimpleSortApp {
      * Сортировка методом вставки
      */
     public void insertionSort(int[] arr) {
-        int in;
-
         for(int out = 1; out < arr.length; out++){
             int temp = arr[out];
-            in = out;
+            int in = out;
             while (in > 0 && arr[in - 1] >= temp){
                 arr[in] = arr[in - 1];
                 --in;
             }
             arr[in] = temp;
+        }
+    }
+
+    /**
+     * Сортировка методом выбора
+     */
+    public void selectionSort(int[] arr) {
+        for(int i = 0; i < arr.length - 1; i++){
+            int indMin = i;
+            for(int j = i + 1; j < arr.length; j++){
+                if(arr[j] < arr[indMin]){
+                    indMin = j;
+                }
+            }
+            swap(arr, i, indMin);
         }
     }
 
