@@ -6,6 +6,12 @@ import patterns.adapter.adapters.Player;
 import patterns.adapter.libraries.Mp3Player;
 import patterns.adapter.libraries.ProgressivePlayer;
 
+/**
+ * Паттерн "Адаптер"
+ * Преобразует интерфейс класса к другому интерфейсу, на который рассчитан клиент.
+ * Адаптер обеспечивает совместную работу классов, невозможную в обычных условиях
+ * из-за несовместимости интерфейсов.
+ */
 public class AdapterApp {
 
     public static void main(String[] args) {
